@@ -1,11 +1,11 @@
 public class Dice{
     
-    private Die6 die1;
-    private Die6 die2;
+    public Die6 die1;
+    public Die6 die2;
     
     public Dice() {
-        die1.roll();
-        die2.roll();
+        die1 = new Die6();
+        die2 = new Die6();
     }
     
     public void rollBoth() {
@@ -17,8 +17,8 @@ public class Dice{
         return die1.value + die2.value;
     }
     
-    public void rollDie1() {
-        die1.roll();
+    public int rollAndGetValue(){
+        this.rollBoth();
+        return getValue();
     }
-    
 }
